@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>JPP Law — Modern commercial law firm | City of London expertise at virtual law firm prices</title>
+<meta name="description" content="JPP Law is a modern, virtual commercial law firm serving businesses across the UK and abroad. Transparent fixed fees, direct access to senior solicitors, and a no surprises policy." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#13302A;          /* deep green — primary */
+    --ink-2:#0D211C;         /* darkest */
+    --ink-3:#1E463A;         /* mid green */
+    --brass:#A98650;         /* restrained accent */
+    --brass-deep:#8A6C3C;
+    --cream:#F3EFE6;         /* warm base */
+    --paper:#FAF8F1;
+    --stone:#E6E1D4;         /* image-slot fill */
+    --stone-2:#DDD7C8;
+    --line:#DED8C9;
+    --line-dk:rgba(243,239,230,.14);
+    --ink-soft:#4C5A53;      /* muted text */
+    --ink-faint:#7C877F;
+    --shadow-sm:0 1px 3px rgba(13,33,28,.06);
+    --shadow-md:0 24px 50px -30px rgba(13,33,28,.35);
+    --shadow-lg:0 50px 90px -45px rgba(13,33,28,.5);
+    --r:14px;
+    --r-lg:20px;
+    --maxw:1220px;
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    background:var(--cream);color:var(--ink);
+    line-height:1.6;font-size:clamp(15px,.4vw + 14px,16.5px);
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;letter-spacing:.005em;
+  }
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3,h4{font-family:"Newsreader",Georgia,serif;font-weight:500;line-height:1.08;letter-spacing:-.012em}
+  .serif{font-family:"Newsreader",Georgia,serif}
+  .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  section{position:relative}
+
+  /* buttons — solid ink, restrained */
+  .btn{
+    display:inline-flex;align-items:center;gap:.6em;font-weight:500;font-size:.94rem;
+    padding:.92em 1.5em;border-radius:8px;border:1px solid transparent;cursor:pointer;
+    transition:background .3s var(--ease), color .3s, border-color .3s, transform .3s var(--ease);
+    white-space:nowrap;line-height:1;letter-spacing:.01em;
+  }
+  .btn .arw{transition:transform .35s var(--ease)}
+  .btn:hover .arw{transform:translateX(3px)}
+  .btn-ink{background:var(--ink);color:var(--cream)}
+  .btn-ink:hover{background:var(--ink-3)}
+  .btn-outline{background:transparent;border-color:rgba(19,48,42,.24);color:var(--ink)}
+  .btn-outline:hover{border-color:var(--ink);background:rgba(19,48,42,.03)}
+  .btn-cream{background:var(--cream);color:var(--ink)}
+  .btn-cream:hover{background:#fff}
+  .btn-outline-light{background:transparent;border-color:rgba(243,239,230,.3);color:var(--cream)}
+  .btn-outline-light:hover{border-color:var(--cream);background:rgba(243,239,230,.06)}
+
+  .eyebrow{display:inline-flex;align-items:center;gap:.7em;font-family:"Inter";font-weight:500;
+    font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brass-deep)}
+  .eyebrow::before{content:"";width:22px;height:1px;background:var(--brass);display:inline-block}
+  .eyebrow.center{justify-content:center}
+  .band-dark .eyebrow{color:var(--brass)}
+
+  /* image slots (client supplies photography) */
+  .imgslot{position:relative;overflow:hidden;background:
+      linear-gradient(135deg,var(--stone),var(--stone-2));
+    display:grid;place-items:center;color:var(--ink-faint);isolation:isolate}
+  .imgslot::after{content:"";position:absolute;inset:0;opacity:.5;mix-blend-mode:multiply;pointer-events:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E")}
+  .imgslot .ph{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;padding:16px}
+  .imgslot .ph svg{opacity:.55}
+  .imgslot .ph span{font-family:"Inter";font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;max-width:16em;line-height:1.5;opacity:.85}
+  .imgslot.dark{background:linear-gradient(140deg,#22493D,#0E241F);color:rgba(243,239,230,.55)}
+  .imgslot.dark::after{mix-blend-mode:overlay;opacity:.4}
+
+  /* nav */
+  header.nav{position:sticky;top:0;z-index:70;background:rgba(243,239,230,.8);
+    backdrop-filter:saturate(140%) blur(16px);-webkit-backdrop-filter:saturate(140%) blur(16px);
+    border-bottom:1px solid transparent;transition:border-color .3s, box-shadow .3s}
+  header.nav.scrolled{border-bottom-color:var(--line);box-shadow:0 8px 30px -26px rgba(13,33,28,.7)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:78px;gap:24px}
+  .logo{display:flex;align-items:center;gap:.6em;font-family:"Newsreader";font-weight:500;font-size:1.4rem;letter-spacing:-.01em}
+  .logo .mark{width:38px;height:38px;border-radius:9px;flex:none;background:var(--ink);
+    display:grid;place-items:center;color:var(--cream);font-family:"Newsreader";font-size:.92rem;font-weight:500;letter-spacing:.02em}
+  .logo small{display:block;font-family:"Inter";font-weight:500;font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);margin-top:3px}
+  .nav-links{display:flex;align-items:center;gap:2.2rem;font-size:.92rem;font-weight:450}
+  .nav-links a{color:var(--ink-soft);transition:color .2s;position:relative}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;height:1.5px;width:0;background:var(--brass);transition:width .3s var(--ease)}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-links a:hover::after{width:100%}
+  .nav-cta{display:flex;align-items:center;gap:1rem}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+  .burger span{width:24px;height:1.5px;background:var(--ink);transition:.3s}
+
+  /* hero */
+  .hero{padding:clamp(44px,6vw,84px) 0 clamp(52px,6vw,90px)}
+  .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(32px,5vw,72px);align-items:center}
+  .hero h1{font-size:clamp(2.6rem,5.4vw,4.5rem);letter-spacing:-.02em;font-weight:500}
+  .hero h1 em{font-style:italic;color:var(--ink-3)}
+  .hero .lead{font-size:clamp(1.04rem,1.25vw,1.2rem);color:var(--ink-soft);max-width:32em;margin-top:1.4rem}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+  .hero-trust{display:flex;align-items:center;gap:14px;margin-top:2.1rem}
+  .trust-faces{display:flex}
+  .trust-faces .f{width:38px;height:38px;border-radius:50%;border:2px solid var(--cream);margin-left:-12px;
+    background:linear-gradient(140deg,#2a5a49,#0e241f);display:grid;place-items:center;color:var(--cream);font-size:.72rem;font-weight:600}
+  .trust-faces .f:first-child{margin-left:0}
+  .hero-trust .tx{font-size:.86rem;color:var(--ink-soft)}
+  .hero-trust .tx b{color:var(--ink);font-weight:600}
+
+  /* hero collage */
+  .collage{position:relative;aspect-ratio:1/1.02}
+  .collage .c-main{position:absolute;inset:0 18% 12% 0;border-radius:var(--r-lg);box-shadow:var(--shadow-lg)}
+  .collage .c-2{position:absolute;right:0;top:8%;width:44%;aspect-ratio:3/3.4;border-radius:16px;box-shadow:var(--shadow-md);border:5px solid var(--cream)}
+  .collage .c-3{position:absolute;right:12%;bottom:0;width:40%;aspect-ratio:4/3;border-radius:16px;box-shadow:var(--shadow-md);border:5px solid var(--cream)}
+  .badge-stat{position:absolute;left:-10px;bottom:20%;z-index:5;background:var(--paper);border:1px solid var(--line);
+    border-radius:14px;padding:14px 18px;box-shadow:var(--shadow-md)}
+  .badge-stat .n{font-family:"Newsreader";font-size:1.5rem;font-weight:500;line-height:1}
+  .badge-stat .l{font-size:.68rem;letter-spacing:.04em;color:var(--ink-soft);margin-top:3px}
+
+  /* generic band */
+  .band{padding:clamp(66px,8vw,116px) 0}
+  .band-dark{background:var(--ink);color:var(--cream)}
+  .band-dark .sec-head p,.band-dark .lead-p{color:rgba(243,239,230,.7)}
+  .sec-head{max-width:46rem}
+  .sec-head.center{margin:0 auto;text-align:center}
+  .sec-head h2{font-size:clamp(2rem,3.7vw,3rem);margin-top:1rem;font-weight:500}
+  .sec-head p{margin-top:1.1rem;color:var(--ink-soft);font-size:1.05rem}
+  .head-row{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(36px,5vw,72px);align-items:center}
+  .about-media{aspect-ratio:4/3.5;border-radius:var(--r-lg);overflow:hidden}
+  .about-copy h2{font-size:clamp(1.9rem,3.4vw,2.8rem);font-weight:500}
+  .about-copy .lead-p{margin-top:1.2rem;color:var(--ink-soft);font-size:1.06rem}
+  .about-copy .btn{margin-top:1.8rem}
+  .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:clamp(44px,5vw,68px);
+    border-top:1px solid var(--line);padding-top:clamp(30px,3.5vw,44px)}
+  .stat .num{font-family:"Newsreader";font-weight:500;font-size:clamp(2.1rem,3.6vw,3rem);line-height:1;letter-spacing:-.02em}
+  .stat .num span{color:var(--brass-deep)}
+  .stat .lbl{margin-top:.5rem;font-size:.88rem;color:var(--ink-soft);max-width:13em}
+
+  /* expertise cards with images */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:clamp(36px,4vw,54px)}
+  .svc{border-radius:var(--r);overflow:hidden;background:var(--paper);border:1px solid var(--line);
+    display:flex;flex-direction:column;transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .45s}
+  .svc:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:transparent}
+  .svc-img{aspect-ratio:16/10;overflow:hidden}
+  .svc-img .imgslot{width:100%;height:100%;transition:transform .7s var(--ease)}
+  .svc:hover .svc-img .imgslot{transform:scale(1.05)}
+  .svc-body{padding:24px 24px 26px;display:flex;flex-direction:column;flex:1}
+  .svc-body h3{font-size:1.3rem;font-weight:500}
+  .svc-body p{margin-top:.6rem;font-size:.93rem;color:var(--ink-soft)}
+  .svc-body .more{margin-top:16px;font-size:.8rem;font-weight:500;letter-spacing:.04em;text-transform:uppercase;
+    color:var(--ink-3);display:inline-flex;align-items:center;gap:.45em;padding-top:14px;border-top:1px solid var(--line)}
+  .svc-body .more .a{transition:transform .35s var(--ease)}
+  .svc:hover .more .a{transform:translateX(4px)}
+
+  /* process */
+  .proc-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(36px,5vw,64px);align-items:center;margin-top:clamp(38px,4.5vw,58px)}
+  .steps{display:flex;flex-direction:column}
+  .step{display:flex;gap:22px;padding:26px 0;border-top:1px solid var(--line)}
+  .step:first-child{border-top:0;padding-top:0}
+  .step .n{font-family:"Newsreader";font-size:1.05rem;color:var(--brass-deep);flex:none;width:26px;padding-top:2px}
+  .step h3{font-size:1.24rem;font-weight:500}
+  .step p{margin-top:.5rem;font-size:.94rem;color:var(--ink-soft);max-width:34em}
+  .proc-media{aspect-ratio:4/4.6;border-radius:var(--r-lg);overflow:hidden}
+
+  /* team */
+  .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:clamp(36px,4vw,54px)}
+  .member{}
+  .member-photo{aspect-ratio:4/4.7;border-radius:var(--r);overflow:hidden;margin-bottom:16px;position:relative}
+  .member-photo .imgslot{width:100%;height:100%;transition:transform .7s var(--ease)}
+  .member:hover .member-photo .imgslot{transform:scale(1.04)}
+  .member h3{font-size:1.16rem;font-weight:500}
+  .member .role{font-size:.85rem;color:var(--brass-deep);margin-top:2px}
+  .member .bio{font-size:.85rem;color:var(--ink-soft);margin-top:10px}
+
+  /* mid cta */
+  .midcta{position:relative;border-radius:0;overflow:hidden;color:var(--cream)}
+  .midcta .imgslot{position:absolute;inset:0;width:100%;height:100%}
+  .midcta .veil{position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,33,28,.92),rgba(13,33,28,.7) 55%,rgba(13,33,28,.5))}
+  .midcta-inner{position:relative;z-index:2;padding:clamp(56px,8vw,110px) 0;max-width:40rem}
+  .midcta-inner .eyebrow{color:var(--brass)}
+  .midcta-inner h2{font-size:clamp(2rem,3.7vw,3rem);color:var(--cream);margin-top:1rem;font-weight:500}
+  .midcta-inner p{margin-top:1.1rem;color:rgba(243,239,230,.78);font-size:1.05rem;max-width:34em}
+  .midcta-inner .btn{margin-top:1.9rem}
+
+  /* testimonials */
+  .test-top{display:grid;grid-template-columns:1fr auto;gap:36px;align-items:end;margin-bottom:clamp(32px,4vw,48px)}
+  .rating-block{text-align:right}
+  .rating-block .score{font-family:"Newsreader";font-weight:500;font-size:clamp(2.6rem,4.6vw,3.6rem);line-height:.9}
+  .rating-block .stars{color:var(--brass);letter-spacing:2px;font-size:.95rem;margin-top:6px}
+  .rating-block .cnt{font-size:.82rem;color:var(--ink-soft);margin-top:4px}
+  .quotes{display:grid;grid-template-columns:1.4fr 1fr;gap:22px}
+  .quote-feature,.quote{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:clamp(26px,3vw,38px);display:flex;flex-direction:column}
+  .quote-feature{justify-content:space-between}
+  .quote-col{display:grid;gap:22px}
+  .quote-feature blockquote,.quote blockquote{font-family:"Newsreader";font-weight:400;line-height:1.4;color:var(--ink)}
+  .quote-feature blockquote{font-size:clamp(1.3rem,1.9vw,1.7rem)}
+  .quote blockquote{font-size:1.05rem}
+  .q-who{display:flex;align-items:center;gap:13px;margin-top:26px}
+  .q-avatar{width:46px;height:46px;border-radius:50%;flex:none;overflow:hidden}
+  .q-avatar .imgslot{width:100%;height:100%}
+  .q-who .nm{font-weight:600;font-size:.92rem;font-family:"Inter"}
+  .q-who .rl{font-size:.8rem;color:var(--ink-soft)}
+  .q-stars{color:var(--brass);letter-spacing:1px;font-size:.85rem;margin-bottom:14px}
+
+  /* insights */
+  .ins-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:clamp(36px,4vw,54px)}
+  .ins{border-radius:var(--r);overflow:hidden;background:var(--paper);border:1px solid var(--line);
+    transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
+  .ins:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
+  .ins-img{aspect-ratio:16/10;overflow:hidden;position:relative}
+  .ins-img .imgslot{width:100%;height:100%;transition:transform .7s var(--ease)}
+  .ins:hover .ins-img .imgslot{transform:scale(1.05)}
+  .ins-img .k{position:absolute;left:14px;top:14px;z-index:3;background:rgba(250,248,241,.94);color:var(--ink);
+    font-size:.66rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;padding:.45em .8em;border-radius:6px}
+  .ins-body{padding:22px 22px 24px}
+  .ins-body .date{font-size:.78rem;color:var(--ink-soft);letter-spacing:.02em}
+  .ins-body h3{font-size:1.16rem;margin-top:.5rem;font-weight:500}
+  .ins-body .rd{margin-top:14px;font-size:.78rem;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-3);display:inline-flex;align-items:center;gap:.45em}
+
+  /* footer cta band */
+  .foot-cta{position:relative;overflow:hidden;color:var(--cream)}
+  .foot-cta .imgslot{position:absolute;inset:0;width:100%;height:100%}
+  .foot-cta .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,33,28,.9),rgba(13,33,28,.82))}
+  .foot-cta-inner{position:relative;z-index:2;text-align:center;padding:clamp(64px,9vw,130px) 0}
+  .foot-cta-inner h2{font-size:clamp(2.2rem,4.4vw,3.6rem);color:var(--cream);max-width:16em;margin:0 auto;font-weight:500}
+  .foot-cta-inner .btn{margin-top:2rem}
+
+  /* footer */
+  footer.site{background:var(--ink-2);color:rgba(243,239,230,.7)}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;padding:clamp(56px,7vw,88px) 0 clamp(36px,4vw,52px)}
+  .foot-brand .logo{color:var(--cream)}
+  .foot-brand .logo small{color:rgba(243,239,230,.5)}
+  .foot-brand p{margin-top:18px;font-size:.92rem;max-width:26em;line-height:1.7}
+  .foot-col h4{font-family:"Inter";font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(243,239,230,.45);font-weight:600;margin-bottom:16px}
+  .foot-col a{display:block;padding:6px 0;font-size:.92rem;transition:color .2s}
+  .foot-col a:hover{color:var(--brass)}
+  .foot-bottom{border-top:1px solid var(--line-dk);padding:24px 0;display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+  .foot-bottom .legal{font-size:.82rem;color:rgba(243,239,230,.45)}
+  .credit{font-size:.82rem;color:rgba(243,239,230,.4)}
+  .credit a{color:rgba(243,239,230,.62);border-bottom:1px solid rgba(243,239,230,.22);padding-bottom:1px;transition:color .25s,border-color .25s}
+  .credit a:hover{color:var(--brass);border-color:var(--brass)}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.09s}.reveal.d2{transition-delay:.18s}.reveal.d3{transition-delay:.27s}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+  /* responsive */
+  @media (max-width:1000px){
+    .hero-grid{grid-template-columns:1fr;gap:52px}
+    .collage{max-width:460px;margin:0 auto;width:100%}
+    .about-grid{grid-template-columns:1fr;gap:44px}
+    .svc-grid,.ins-grid{grid-template-columns:repeat(2,1fr)}
+    .proc-grid{grid-template-columns:1fr;gap:44px}
+    .proc-media{aspect-ratio:16/10;max-width:560px}
+    .team-grid{grid-template-columns:repeat(2,1fr)}
+    .stat-row{grid-template-columns:repeat(2,1fr);gap:32px 24px}
+    .quotes{grid-template-columns:1fr}
+    .test-top{grid-template-columns:1fr}
+    .rating-block{text-align:left}
+  }
+  @media (max-width:760px){
+    .nav-links{position:fixed;inset:78px 0 auto 0;flex-direction:column;align-items:stretch;background:var(--paper);
+      gap:0;padding:8px 28px 24px;border-bottom:1px solid var(--line);transform:translateY(-140%);
+      transition:transform .45s var(--ease);box-shadow:var(--shadow-md)}
+    .nav-links.open{transform:none}
+    .nav-links a{padding:15px 0;border-bottom:1px solid var(--line);font-size:1.02rem}
+    .nav-links a::after{display:none}
+    .nav .desk-cta{display:none}
+    .burger{display:flex}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .foot-brand{grid-column:1/-1}
+  }
+  @media (max-width:540px){
+    .wrap{padding:0 22px}
+    .svc-grid,.ins-grid,.team-grid{grid-template-columns:1fr}
+    .stat-row{grid-template-columns:1fr 1fr}
+    .hero-actions .btn{flex:1;justify-content:center}
+    .quote-col{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr}
+    .foot-bottom{flex-direction:column;align-items:flex-start}
+    .badge-stat{left:0}
+  }
+</style>
+</head>
+<body id="top">
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="logo" aria-label="JPP Law home">
+      <span class="mark">JPP</span>
+      <span>JPP Law<small>Commercial Solicitors</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#team">Our Team</a>
+      <a href="#insights">News &amp; Insights</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-ink desk-cta">Book a consultation</a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow reveal">Modern commercial law</span>
+      <h1 class="reveal d1">City of London expertise, at <em>virtual law firm</em> prices.</h1>
+      <p class="lead reveal d2">JPP Law is a modern, virtual commercial law firm serving businesses across the UK and abroad. We have broken away from the traditional model to reduce fees, remove geographical barriers, and raise the standard of client service.</p>
+      <div class="hero-actions reveal d2">
+        <a href="#contact" class="btn btn-ink">Book a consultation <span class="arw">&rarr;</span></a>
+        <a href="#expertise" class="btn btn-outline">Explore our expertise</a>
+      </div>
+      <div class="hero-trust reveal d3">
+        <div class="trust-faces">
+          <span class="f">JP</span><span class="f">SW</span><span class="f">DO</span><span class="f">AR</span>
+        </div>
+        <div class="tx"><b>Trusted by 600+ businesses</b><br>across tech, fintech, and renewables</div>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal d1">
+      <div class="collage">
+        <div class="imgslot c-main">
+          <div class="ph"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="9" r="1.6"/><path d="M21 15l-5-5L5 21"/></svg><span>Team in a modern office — candid, working</span></div>
+        </div>
+        <div class="imgslot c-2">
+          <div class="ph"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="9" r="1.6"/><path d="M21 15l-5-5L5 21"/></svg><span>Solicitor portrait</span></div>
+        </div>
+        <div class="imgslot c-3">
+          <div class="ph"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="9" r="1.6"/><path d="M21 15l-5-5L5 21"/></svg><span>Client meeting</span></div>
+        </div>
+        <div class="badge-stat">
+          <div class="n">15+ years</div>
+          <div class="l">advising growth businesses</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="band" id="about" style="padding-top:0">
+  <div class="wrap about-grid">
+    <div class="about-media reveal">
+      <div class="imgslot" style="width:100%;height:100%">
+        <div class="ph"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="9" r="1.6"/><path d="M21 15l-5-5L5 21"/></svg><span>Firm environment — two lawyers reviewing documents</span></div>
+      </div>
+    </div>
+    <div class="about-copy reveal d1">
+      <span class="eyebrow">About JPP Law</span>
+      <h2>A modern practice, built on clarity and trust.</h2>
+      <p class="lead-p">JPP Law has broken away from the traditional law firm model and developed new ways of working that reduce client fees, remove geographical barriers, and enhance client service. Our efficient structure lets us offer City of London expertise nationally and internationally — at virtual law firm prices, and always under a no surprises on fees policy.</p>
+      <a href="#expertise" class="btn btn-outline">Learn more about the firm</a>
+
+      <div class="stat-row">
+        <div class="stat"><div class="num" data-count="15">0<span>+</span></div><div class="lbl">Years of experience</div></div>
+        <div class="stat"><div class="num" data-count="600">0<span>+</span></div><div class="lbl">Businesses supported</div></div>
+        <div class="stat"><div class="num" data-count="9">0<span></span></div><div class="lbl">Core practice areas</div></div>
+        <div class="stat"><div class="num" data-count="24">0<span>h</span></div><div class="lbl">Typical response time</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section class="band" id="expertise" style="padding-top:0">
+  <div class="wrap">
+    <div class="head-row reveal">
+      <div class="sec-head">
+        <span class="eyebrow">Our expertise</span>
+        <h2>Commercial legal support across the areas that matter most.</h2>
+      </div>
+      <a href="#contact" class="btn btn-outline">View all practice areas</a>
+    </div>
+    <div class="svc-grid">
+      <article class="svc reveal">
+        <div class="svc-img"><div class="imgslot"><div class="ph"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="9" r="1.6"/><path d="M21 15l-5-5L5 21"/></svg><span>Contract review</span></div></div></div>
+        <div class="svc-body">
+          <h3>Commercial Contracts &amp; T&amp;Cs</h3>
+          <p>Supplier agreements, SaaS terms and trading conditions — drafted and negotiated to protect your business as it grows.</p>
+          <span class="more">Learn more <span class="a">&rarr;</span></span>
+        </div>
+      </article>
+      <article class="svc reveal d1">
+        <div class="svc-img"><div class="imgslot"><div class="ph"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="9" r="1.6"/><path d="M21 15l-5-5L5 21"/></svg><span>Compliance</span></div></div></div>
+        <div class="svc-body">
+          <h3>Data Protection &amp; Privacy</h3>
+          <p>UK GDPR advice, data processing agreements, policies and audits — so growth never runs ahead of compliance.</p>
+          <span class="more">Learn more <span class="a">&rarr;</span></span>
+        </div>
+      </article>
+      <article class="svc reveal d2">
+        <div class="svc-img"><div class="imgslot"><div class="ph"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="9" r="1.6"/><path d="M21 15l-5-5L5 21"/></svg><span>Dispute resolution</span></div></div></div>
+        <div class="svc-body">
+          <h3>Dispute Resolution</h3>
+          <p>Commercial disputes handled commercially — resolved efficiently where possible, and argued firmly where necessary.</p>
+          <span class="more">Learn more <span class="a">&rarr;</span></span>
+        </div>
+      </article>
+      <article class="svc reveal">
+        <div class="svc-img"><div class="imgslot"><div class="ph"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="9" r="1.6"/><path d="M21 15l-5-5L5 21"/></svg><span>Corporate deal</span></div></div></div>
+        <div class="svc-body">
+          <h3>Corporate, M&amp;A &amp; Finance</h3>
+          <p>Funding rounds, share options, acquisitions and disposals — steady counsel on the transactions that define your business.</p>
+          <span class="more">Learn more <span class="a">&rarr;</span></span>
+        </div>
+      </article>
+      <article class="svc reveal d1">
+        <div class="svc-img"><div class="imgslot"><div class="ph"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="9" r="1.6"/><path d="M21 15l-5-5L5 21"/></svg><span>Workplace</span></div></div></div>
+        <div class="svc-body">
+          <h3>Employment Law</h3>
+          <p>Contracts, policies, restructures and exits — handled cleanly and early, before they become claims.</p>
+          <span class="more">Learn more <span class="a">&rarr;</span></span>
+        </div>
+      </article>
+      <article class="svc reveal d2">
+        <div class="svc-img"><div class="imgslot"><div class="ph"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="9" r="1.6"/><path d="M21 15l-5-5L5 21"/></svg><span>Brand &amp; IP</span></div></div></div>
+        <div class="svc-body">
+          <h3>Intellectual Property</h3>
+          <p>Trade marks, IP assignments and licensing — protecting the assets that make your business worth backing.</p>
+          <span class="more">Learn more <span class="a">&rarr;</span></span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="band band-dark" id="process">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">How we work</span>
+      <h2>From first conversation to resolution — handled with clarity.</h2>
+      <p>A straightforward way of working, designed to give you certainty on scope, cost and timing before we begin.</p>
+    </div>
+    <div class="proc-grid">
+      <div class="steps">
+        <div class="step reveal"><div class="n">01</div><div><h3>Introductory consultation</h3><p>We start by understanding your business and the matter at hand — no obligation, and no clock running.</p></div></div>
+        <div class="step reveal d1"><div class="n">02</div><div><h3>A fixed-fee proposal</h3><p>You receive a clear scope and a single agreed price in writing, in line with our no surprises on fees policy.</p></div></div>
+        <div class="step reveal d2"><div class="n">03</div><div><h3>Direct senior counsel</h3><p>Your named solicitor takes the work forward and stays your point of contact throughout — no being passed around.</p></div></div>
+        <div class="step reveal d3"><div class="n">04</div><div><h3>Delivered, and on hand</h3><p>Completed to scope and on budget, with your solicitor a short email or call away for whatever comes next.</p></div></div>
+      </div>
+      <div class="proc-media reveal d1">
+        <div class="imgslot dark" style="width:100%;height:100%"><div class="ph"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="9" r="1.6"/><path d="M21 15l-5-5L5 21"/></svg><span>Solicitor with client — considered, calm</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="band" id="team">
+  <div class="wrap">
+    <div class="head-row reveal">
+      <div class="sec-head">
+        <span class="eyebrow">Our team</span>
+        <h2>A forward-thinking team of commercial lawyers.</h2>
+        <p>Our solicitors have chosen to work together because of their experience, their knowledge, and a shared aspiration to practise law in a modern, innovative way.</p>
+      </div>
+    </div>
+    <div class="team-grid">
+      <article class="member reveal">
+        <div class="member-photo"><div class="imgslot"><div class="ph"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg><span>Headshot</span></div></div></div>
+        <h3>James Prescott</h3>
+        <div class="role">Managing Partner</div>
+        <p class="bio">Corporate, M&amp;A and commercial contracts for scaling businesses.</p>
+      </article>
+      <article class="member reveal d1">
+        <div class="member-photo"><div class="imgslot"><div class="ph"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg><span>Headshot</span></div></div></div>
+        <h3>Sarah Whitfield</h3>
+        <div class="role">Partner — Corporate &amp; Finance</div>
+        <p class="bio">Funding rounds, investment and corporate structuring.</p>
+      </article>
+      <article class="member reveal d2">
+        <div class="member-photo"><div class="imgslot"><div class="ph"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg><span>Headshot</span></div></div></div>
+        <h3>David Osei</h3>
+        <div class="role">Senior Solicitor — Disputes</div>
+        <p class="bio">Commercial dispute resolution and debt recovery.</p>
+      </article>
+      <article class="member reveal d3">
+        <div class="member-photo"><div class="imgslot"><div class="ph"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg><span>Headshot</span></div></div></div>
+        <h3>Ana Ruiz</h3>
+        <div class="role">Solicitor — Data &amp; IP</div>
+        <p class="bio">Data protection, privacy and intellectual property.</p>
+      </article>
+    </div>
+    <p style="font-size:.78rem;color:var(--ink-faint);margin-top:24px">Team members shown are illustrative placeholders for this design concept.</p>
+  </div>
+</section>
+
+<!-- MID CTA -->
+<section class="midcta">
+  <div class="imgslot dark"><div class="ph"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="9" r="1.6"/><path d="M21 15l-5-5L5 21"/></svg><span>Wide office / city environment</span></div></div>
+  <div class="veil"></div>
+  <div class="wrap">
+    <div class="midcta-inner reveal">
+      <span class="eyebrow">Speak to a solicitor</span>
+      <h2>Direct access to senior counsel — not a switchboard.</h2>
+      <p>Every client works with a named senior solicitor who knows their business and responds quickly. Book an introductory consultation to talk it through.</p>
+      <a href="#contact" class="btn btn-cream">Book a consultation <span class="arw">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="band" id="reviews">
+  <div class="wrap">
+    <div class="test-top reveal">
+      <div class="sec-head">
+        <span class="eyebrow">Client perspectives</span>
+        <h2>Trusted by founders and businesses alike.</h2>
+      </div>
+      <div class="rating-block">
+        <div class="score">4.9<span style="font-size:.5em;color:var(--ink-soft)">/5</span></div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="cnt">Based on client reviews</div>
+      </div>
+    </div>
+
+    <div class="quotes">
+      <article class="quote-feature reveal">
+        <div>
+          <div class="q-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>"JPP explained complex matters in a way that felt genuinely manageable and transparent. They reply to an email or take a call there and then — after years of chasing solicitors, that alone was worth the switch."</blockquote>
+        </div>
+        <div class="q-who">
+          <div class="q-avatar"><div class="imgslot"><div class="ph"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div></div></div>
+          <div><div class="nm">Michael Thompson</div><div class="rl">Founder, SaaS platform</div></div>
+        </div>
+      </article>
+      <div class="quote-col">
+        <article class="quote reveal d1">
+          <div class="q-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>"Fixed fee, no surprises, and thoroughly professional throughout. They made a demanding funding round feel completely handled."</blockquote>
+          <div class="q-who">
+            <div class="q-avatar"><div class="imgslot"><div class="ph"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div></div></div>
+            <div><div class="nm">Maya Ellison</div><div class="rl">CEO, clean energy startup</div></div>
+          </div>
+        </article>
+        <article class="quote reveal d2">
+          <div class="q-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>"Personal, responsive and refreshingly clear. It felt like having a senior lawyer on the team."</blockquote>
+          <div class="q-who">
+            <div class="q-avatar"><div class="imgslot"><div class="ph"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div></div></div>
+            <div><div class="nm">Daniel K.</div><div class="rl">Co-founder, fintech</div></div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <p style="font-size:.78rem;color:var(--ink-faint);margin-top:22px">Rating and testimonials shown are illustrative placeholders created for this design concept.</p>
+  </div>
+</section>
+
+<!-- INSIGHTS -->
+<section class="band" id="insights" style="padding-top:0">
+  <div class="wrap">
+    <div class="head-row reveal">
+      <div class="sec-head">
+        <span class="eyebrow">News &amp; insights</span>
+        <h2>Clear thinking on the law behind good business.</h2>
+      </div>
+      <a href="#" class="btn btn-outline">View all insights</a>
+    </div>
+    <div class="ins-grid">
+      <article class="ins reveal">
+        <div class="ins-img"><span class="k">Corporate</span><div class="imgslot"><div class="ph"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="9" r="1.6"/><path d="M21 15l-5-5L5 21"/></svg><span>Article image</span></div></div></div>
+        <div class="ins-body"><div class="date">July 2026 &middot; 4 min read</div><h3>Term sheets: the five clauses that actually shape your round</h3><span class="rd">Read more <span>&rarr;</span></span></div>
+      </article>
+      <article class="ins reveal d1">
+        <div class="ins-img"><span class="k">Data</span><div class="imgslot"><div class="ph"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="9" r="1.6"/><path d="M21 15l-5-5L5 21"/></svg><span>Article image</span></div></div></div>
+        <div class="ins-body"><div class="date">June 2026 &middot; 6 min read</div><h3>A founder's practical guide to UK GDPR obligations</h3><span class="rd">Read more <span>&rarr;</span></span></div>
+      </article>
+      <article class="ins reveal d2">
+        <div class="ins-img"><span class="k">Contracts</span><div class="imgslot"><div class="ph"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="9" r="1.6"/><path d="M21 15l-5-5L5 21"/></svg><span>Article image</span></div></div></div>
+        <div class="ins-body"><div class="date">June 2026 &middot; 5 min read</div><h3>Standard terms vs bespoke contracts: when each is worth it</h3><span class="rd">Read more <span>&rarr;</span></span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER CTA -->
+<section class="foot-cta" id="contact">
+  <div class="imgslot dark"><div class="ph"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="9" r="1.6"/><path d="M21 15l-5-5L5 21"/></svg><span>Wide firm / cityscape image</span></div></div>
+  <div class="veil"></div>
+  <div class="wrap">
+    <div class="foot-cta-inner reveal">
+      <span class="eyebrow center">Your next step starts here</span>
+      <h2 style="margin-top:18px">Good legal advice starts with a conversation.</h2>
+      <a href="#" class="btn btn-cream">Book a consultation <span class="arw">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="logo"><span class="mark">JPP</span><span>JPP Law<small>Commercial Solicitors</small></span></a>
+        <p>A modern, virtual commercial law firm offering City of London expertise at virtual law firm prices — with transparent fixed fees and direct access to senior solicitors.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Firm</h4>
+        <a href="#about">About us</a>
+        <a href="#team">Our team</a>
+        <a href="#process">How we work</a>
+        <a href="#insights">News &amp; insights</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h4>Expertise</h4>
+        <a href="#expertise">Commercial contracts</a>
+        <a href="#expertise">Data protection</a>
+        <a href="#expertise">Dispute resolution</a>
+        <a href="#expertise">Corporate &amp; M&amp;A</a>
+        <a href="#expertise">Employment</a>
+      </div>
+      <div class="foot-col">
+        <h4>Get in touch</h4>
+        <a href="#contact">Book a consultation</a>
+        <a href="#">hello@jpplaw.co.uk</a>
+        <a href="#">London, United Kingdom</a>
+        <a href="#">Mon–Fri, 9–6</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span class="legal">&copy; 2026 JPP Law. Design concept — placeholder content for pitch purposes.</span>
+      <span class="credit">Made by <a href="https://chargedstudio.co.uk" target="_blank" rel="noopener">Charged Studio</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 12);
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  const burger = document.getElementById('burger');
+  const links = document.getElementById('navLinks');
+  burger.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  const io = new IntersectionObserver((es) => {
+    es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  const fmt = n => n.toLocaleString('en-GB');
+  const countIO = new IntersectionObserver((es) => {
+    es.forEach(e => {
+      if(!e.isIntersecting) return;
+      const el = e.target, target = +el.dataset.count, suffix = el.querySelector('span')?.outerHTML || '';
+      let start=null;
+      const step = ts => {
+        if(!start) start=ts;
+        const p = Math.min((ts-start)/1300,1), eased = 1-Math.pow(1-p,3);
+        el.innerHTML = fmt(Math.round(target*eased)) + suffix;
+        if(p<1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step); countIO.unobserve(el);
+    });
+  }, {threshold:0.6});
+  document.querySelectorAll('.num[data-count]').forEach(el => countIO.observe(el));
+</script>
+</body>
+</html>
